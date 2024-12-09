@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <title>Enhanced Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body
+    class="bg-gradient-to-br from-blue-600 to-indigo-900 text-white min-h-screen"
+  >
+    <!-- Fixed Header -->
+    <header
+      class="fixed top-0 left-0 right-0 bg-blue-800 bg-opacity-90 shadow-lg z-10"
+    >
+      <div
+        class="max-w-6xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between items-center"
+      >
+        <div class="text-center sm:text-left">
+          <h1 id="greeting" class="text-2xl font-bold"></h1>
+          <p id="date-time" class="text-sm"></p>
+        </div>
+        <div
+          class="flex flex-wrap justify-center items-center space-x-0 space-y-2 sm:space-x-4 sm:space-y-0 mt-2 sm:mt-0"
+        >
+          <select id="city-dropdown" class="bg-gray-200 rounded p-2 text-black">
+            <option value="" disabled selected>Select a city</option>
+          </select>
+          <input
+            id="city-input"
+            type="text"
+            placeholder="Enter city"
+            class="p-2 rounded-lg focus:outline-none text-black"
+          />
+          <button
+            id="search-btn"
+            class="px-4 py-2 bg-green-600 rounded-lg hover:bg-green-700"
+          >
+            Search
+          </button>
+          <button
+            id="current-location-btn"
+            class="px-4 py-2 bg-yellow-600 rounded-lg hover:bg-yellow-700"
+          >
+            Use Current Location
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <div
+      class="pt-24 max-w-6xl mx-auto p-4 grid grid-cols-1 lg:grid-cols-10 gap-6"
+    >
+      <!-- Main Content Column (Responsive Adjustment) -->
+      <div class="lg:col-span-7 mt-[170px] sm:mt-0 for-marg">
+        <!-- Current Weather -->
+        <div
+          id="current-weather"
+          class="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg mb-8"
+        >
+          <h2 class="text-2xl font-semibold mb-2">Loading...</h2>
+          <div class="flex flex-col sm:flex-row items-center">
+            <div class="text-center sm:text-left">
+              <p class="text-4xl sm:text-6xl font-bold" id="temperature">
+                --°C
+              </p>
+              <p class="text-xl" id="weather-desc">Fetching...</p>
+            </div>
+            <img
+              id="weather-icon"
+              src=""
+              alt="Weather Icon"
+              class="w-16 sm:w-24 h-16 sm:h-24 mx-auto sm:ml-auto"
+            />
+          </div>
+          <div class="mt-4 text-sm text-center sm:text-left">
+            <p>Humidity: <span id="humidity">--%</span></p>
+            <p>Wind Speed: <span id="wind-speed">-- m/s</span></p>
+          </div>
+        </div>
+
+        <!-- 5-Day Extended Forecast -->
+        <h3 class="text-xl font-bold mb-4">5-Day Forecast</h3>
+        <div
+          id="forecast"
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
+        >
+          <!-- Extended forecast cards will be dynamically generated -->
+        </div>
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="lg:col-span-3">
+        <h3 class="text-xl font-bold mb-4">Recommended Locations</h3>
+        <div id="recommended-locations" class="space-y-4">
+          <!-- Recommended locations will be dynamically generated -->
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
