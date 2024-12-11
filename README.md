@@ -16,6 +16,12 @@ JavaScript: Handles API integration, DOM manipulation, and user interactions.
 Tailwind CSS: Utility-first CSS framework for responsive design.
 OpenWeatherMap API: Provides weather data and forecasts.
 
+
+the site is hosted at github Repo
+
+here is the link of github Repo : https://github.com/Naveennayak1/weather-forecast
+and the site is live at         : https://naveennayak1.github.io/weather-forecast/src/index.html
+
 API Key:
 
 Obtain an API key from OpenWeatherMap.
